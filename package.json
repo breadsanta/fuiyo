@@ -1,10 +1,12 @@
 {
   "name": "fuiyo",
   "version": "1.0.0",
-  "description": "",
+  "description": "A discord bot",
+  "repository": "https://github.com/breadsanta/fuiyo",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "NODE_ENV=production node index.js",
+    "start_development": "NODE_ENV=development nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,5 +15,8 @@
   "dependencies": {
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }

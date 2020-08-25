@@ -9,10 +9,15 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-	if (msg.content === '/quien') {
+	if (msg.content.toLowerCase() === '/quien') {
 		const name = names[Math.floor(Math.random() * names.length)]
 		msg.channel.send(`No se preocupen, fue ${name}`)
 	}
 });
 
-client.login(process.env.TOKEN);
+if (process.env.NODE_ENV === 'development') {
+	client.login(process.env.DEVELOPMENT_TOKEN);
+} else {
+	client.login(process.env.TOKEN);
+
+}
